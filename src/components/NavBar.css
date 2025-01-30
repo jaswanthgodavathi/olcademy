@@ -1,0 +1,9 @@
+input::placeholder {
+    color: #a0aec0; /* Light gray for placeholder text */
+    transition: color 0.3s;
+  }
+  
+  input:focus::placeholder {
+    color: #4fd1c5; /* Blue tint for focused placeholder */
+  }
+  
