@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import "./Careers.css";
+import webDevImage from "../images/careerswebd.jpg";
+import businessAnalystImage from "../images/careersdatanalyst.jpg";
+import hrInternImage from "../images/careershr.jpg";
+import businessDevImage from "../images/careersbusinessdeveloper.jpg";
+import salesImage from "../images/careerssales.jpg";
+
 const jobList = [
   {
     id: 1,
@@ -8,6 +14,7 @@ const jobList = [
     location: "Remote",
     description:
       "We are looking for a passionate Web Developer to join our team to build scalable, secure, and high-performing websites.",
+    image: webDevImage,
   },
   {
     id: 2,
@@ -16,6 +23,7 @@ const jobList = [
     location: "Remote",
     description:
       "We are looking for an enthusiastic Business Analyst Intern to help analyze and interpret data to aid in decision-making.",
+    image: businessAnalystImage,
   },
   {
     id: 3,
@@ -24,6 +32,7 @@ const jobList = [
     location: "Remote",
     description:
       "As an HR Intern, you'll assist with recruiting, employee engagement, and administrative HR tasks.",
+    image: hrInternImage,
   },
   {
     id: 4,
@@ -32,6 +41,7 @@ const jobList = [
     location: "Remote",
     description:
       "We need a Business Developer Intern to help generate new business opportunities and client relationships.",
+    image: businessDevImage,
   },
   {
     id: 5,
@@ -40,48 +50,10 @@ const jobList = [
     location: "Remote",
     description:
       "Looking for a motivated Sales Intern to assist in lead generation, follow-ups, and sales strategy development.",
-  },
-  {
-    id: 6,
-    title: "Product Manager Intern",
-    company: "Olcademy",
-    location: "Remote",
-    description:
-      "We are seeking a Product Manager Intern to support product development efforts and help drive product strategy.",
-  },
-  {
-    id: 7,
-    title: "Marketing Intern",
-    company: "Olcademy",
-    location: "Remote",
-    description:
-      "As a Marketing Intern, you’ll help with content creation, digital marketing campaigns, and market research.",
-  },
-  {
-    id: 8,
-    title: "Data Analyst Intern",
-    company: "Olcademy",
-    location: "Remote",
-    description:
-      "Looking for a Data Analyst Intern to assist in gathering and analyzing data to support business insights.",
-  },
-  {
-    id: 9,
-    title: "Graphic Designer Intern",
-    company: "Olcademy",
-    location: "Remote",
-    description:
-      "We need a creative Graphic Designer Intern to assist with visual content creation and branding for the company.",
-  },
-  {
-    id: 10,
-    title: "Customer Support Intern",
-    company: "Olcademy",
-    location: "Remote",
-    description:
-      "Join our Customer Support team and assist with resolving customer inquiries and ensuring customer satisfaction.",
+    image: salesImage,
   },
 ];
+
 
 const Careers = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -153,13 +125,16 @@ const Careers = () => {
         ) : (
           filteredJobs.map((job) => (
             <div className="job-card" key={job.id}>
-              <h2 className="job-title">{job.title}</h2>
-              <div className="job-details">
-                <span className="company">{job.company}</span>
-                <span className="location">{job.location}</span>
+              <img src={job.image} alt={job.title} className="job-image" />
+              <div className="job-content">
+                <h2 className="job-title">{job.title}</h2>
+                <div className="job-details">
+                  <span className="company">{job.company}</span>
+                  <span className="location">{job.location}</span>
+                </div>
+                <p className="job-description">{job.description}</p>
+                <button className="apply-button">Apply Now</button>
               </div>
-              <p className="job-description">{job.description}</p>
-              <button className="apply-button">Apply Now</button>
             </div>
           ))
         )}

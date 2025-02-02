@@ -21,6 +21,7 @@ button {
 
 input, select {
   outline: none;
+  transition: border-color 0.3s ease; /* Smooth transition for input focus */
 }
 
 /* Careers Container */
@@ -51,6 +52,11 @@ input, select {
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.search-input:hover {
+  border-color: #357ab7; /* Border color change on hover */
 }
 
 .search-button {
@@ -60,10 +66,11 @@ input, select {
   font-size: 16px;
   border: none;
   border-radius: 4px;
+  transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 .search-button:hover {
-  background-color: #357ab7;
+  background-color: #357ab7; /* Button color change on hover */
 }
 
 /* Filters */
@@ -79,6 +86,11 @@ input, select {
   width: 200px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.filter-select:hover {
+  border-color: #357ab7; /* Border color change on hover */
 }
 
 .clear-filters {
@@ -88,36 +100,58 @@ input, select {
   font-size: 16px;
   border: none;
   border-radius: 4px;
+  transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 .clear-filters:hover {
-  background-color: #c0392b;
+  background-color: #c0392b; /* Button color change on hover */
 }
 
 /* Job List */
 .job-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
+/* Job Card */
 .job-card {
   background-color: white;
-  padding: 20px;
   border-radius: 8px;
+  overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transform and shadow */
+}
+
+.job-card:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+.job-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.job-content {
+  padding: 20px;
 }
 
 .job-title {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #333;
   margin-bottom: 10px;
 }
 
 .job-details {
   display: flex;
+  justify-content: center;
   gap: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .company, .location {
@@ -127,7 +161,7 @@ input, select {
 
 .job-description {
   font-size: 1rem;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   color: #777;
 }
 
@@ -138,10 +172,12 @@ input, select {
   font-size: 16px;
   border: none;
   border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .apply-button:hover {
-  background-color: #357ab7;
+  background-color: #357ab7; /* Button color change on hover */
+  transform: scale(1.05); /* Slight enlarge effect on hover */
 }
 
 /* No Jobs Found */
@@ -149,4 +185,24 @@ input, select {
   font-size: 1.5rem;
   color: #e74c3c;
   text-align: center;
+}
+
+/* Dark Mode Styling */
+body {
+  background-color: #000;
+  color: white;
+}
+
+.job-card {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transform and shadow */
+}
+
+.job-card:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2); /* Increased shadow on hover */
 }
