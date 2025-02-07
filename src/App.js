@@ -21,6 +21,7 @@ import PublicServices from "./components/PublicServices";
 import CapitalMarkets from "./components/CapitalMarkets";
 import ConsumerGoods from "./components/ConsumerGoods";
 import Healthcare from "./components/HealthCare";
+import ArtificialIntelligence from "./components/ActServices/ArtificialIntelligence";
 
 const App = () => {
   return (
@@ -52,6 +53,7 @@ const App = () => {
           <Route path="/capital-markets" element={<CapitalMarkets />} />
           <Route path="/consumer-goods" element={<ConsumerGoods />} />
           <Route path="/healthcare" element={<Healthcare />} />
+          <Route path="/artificial-intelligence" element={<ArtificialIntelligence />} />
         </Routes>
       </div>
     </Router>
